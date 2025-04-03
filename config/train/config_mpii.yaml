@@ -24,7 +24,7 @@ train:
         
     pretrain:
         enable: True
-        path: "/userhome/share_hosts/work/Transformer/ComTrans/exp/Transformer-6layers/eth/checkpoint/Iter_50_trans6.pt"
+        path: "/Iter_50_trans6.pt"
         device: 0
 
     device: 0
