@@ -1,7 +1,7 @@
 import sys, os
 base_dir = os.getcwd()
 sys.path.insert(0, base_dir)
-import model
+from models.MCAPGI import MCAPGI
 import importlib
 import numpy as np
 import torch
@@ -46,7 +46,7 @@ def main(config):
                 )
 
     print("===> Model building <===")
-    net = model.Model(); net.train(); net.cuda()
+    net = MCAPGI(num_class=2); net.train(); net.cuda()
 
     
     # Pretrain
