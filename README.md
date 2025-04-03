@@ -3,7 +3,15 @@ The Pytorch Implementation of “MCA-PGI: Nonlinear Multi-Head Cross-Attention N
 
 ## Requirements
 
-We bulid the project with python=3.8.
+We build the project with python=3.8.
+
+```python
+conda create -n xxx python=3.8
+```
+
+```python
+conda activate xxx
+```
 
 ```python
 pip install -r requirements.txt
@@ -71,6 +79,38 @@ This project utilizes data processing codes provided in [GazeHub](http://phi-ai.
 ## Usage
 
 **Directly use our code.**
+
+You should perform three steps to run our codes.
+
+1. Prepare the data using  [GazeHub](http://phi-ai.org/GazeHub/) data processing codes.
+2. Modify the `config/train/config_xx.yaml` and `config/test/config_xx.yaml`.
+3. Run the commands.
+
+To perform leave-one-person-out evaluation, you can run
+
+```
+python trainer/leave.py -s config/train/config_xx.yaml -p 0
+```
+
+Note that, this command only performs training in the `0th` person. You should modify the parameter of `-p` and repeat it.
+
+To perform training-test evaluation, you can run
+
+```
+python trainer/total.py -s config/train/config_xx.yaml    
+```
+
+To test your model, you can run
+
+```
+python trainer/leave.py -s config/train/config_xx.yaml -t config/test/config_xx.yaml -p 0
+```
+
+or
+
+```
+python trainer/total.py -s config/train/config_xx.yaml -t config/test/config_xx.yaml
+```
 
 We have implemented the model, with the specific code and training framework referenced from [yihuacheng](https://github.com/yihuacheng/Gaze360.git). 
 
