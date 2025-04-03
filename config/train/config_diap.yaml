@@ -1,0 +1,35 @@
+---
+train:
+
+    params:
+        batch_size: 32
+        epoch: 50
+        lr: 0.0003
+        decay: 0.5
+        decay_step: 60
+        warmup: 5
+
+    save:
+        metapath: "./exp/"
+        folder: diap
+        model_name: trans6
+        step: 10
+
+    data:
+        image: "/userdata/Diap.zip/EyeDiap/Image" # change for your data path
+        label: "/userdata/Diap.zip/EyeDiap/ClusterLabel" 
+        header: True
+        name: diap
+        isFolder: True
+        
+    pretrain:
+        enable: True
+        path: "./pretrain/Iter_50_trans6.pt"
+        device: 0
+
+    device: 0
+
+    reader: reader
+
+# dropout = 0
+# dim_feed = 512
