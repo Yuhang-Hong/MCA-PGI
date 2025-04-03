@@ -1,7 +1,7 @@
 import os, sys
 base_dir = os.getcwd()
 sys.path.insert(0, base_dir)
-import model
+from models.MCAPGI import MCAPGI
 import importlib
 import numpy as np
 import torch
@@ -47,7 +47,7 @@ def main(train, test):
 
         print(f"Test {saveiter}")
 
-        net = model.Model()
+        net = MCAPGI(num_class=2)
 
         statedict = torch.load(
                         os.path.join(modelpath, 
