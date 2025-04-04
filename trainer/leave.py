@@ -7,9 +7,10 @@ import numpy as np
 import torch
 import cv2
 import torch.nn as nn
-import torch.optim as optime
+import torch.optim as optim
 import copy
 import yaml
+from torch.nn import L1Loss
 import ctools
 from easydict import EasyDict as edict
 import torch.backends.cudnn as cudnn
@@ -111,7 +112,7 @@ def main(config):
 
                 anno = anno.cuda()
  
-                loss = net.loss(data, anno)
+                loss = L1Loss(data, anno)
 
                 # -----------------backward--------------------
                 optimizer.zero_grad()
