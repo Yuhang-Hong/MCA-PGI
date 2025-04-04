@@ -7,6 +7,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torch.optim as optim
+from torch.nn import L1Loss
 import copy
 import yaml
 import cv2
@@ -112,7 +113,7 @@ def main(config):
                     if key != 'name': data[key] = data[key].cuda()
 
                 anno = anno.cuda() 
-                loss = net.loss(data, anno)
+                loss = L1Loss(data, anno)
 
                 # -------------- Backward ------------
                 optimizer.zero_grad()
