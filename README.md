@@ -1,5 +1,5 @@
 # Nonlinear Multi-Head Cross-Attention Network and Programmable Gradient Information for Gaze Estimation
-The Pytorch Implementation of “MCA-PGI: Nonlinear Multi-Head Cross-Attention Network and Programmable Gradient Information for Gaze Estimation”.
+The Pytorch Implementation of “Nonlinear Multi-Head Cross-Attention Network and Programmable Gradient Information for Gaze Estimation”.
 
 ## Requirements
 
